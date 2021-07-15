@@ -24,5 +24,13 @@ def hello(count, name):
         click.echo(f"Hello {name}!")
 
 
+# https://github.com/GreyNoise-Intelligence/pygreynoise/blob/master/src/greynoise/cli/helper.py
+@cli.command()
+def echo():
+    input_file = click.open_file("-")
+    input = input_file.readline()
+    click.echo(input)
+
+
 if __name__ == "__main__":
     cli()
